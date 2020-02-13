@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="AuthMe-5.6.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../M Server 1.15.2 Spigot/plugins/AuthMe-5.6.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../M Server 1.15.2 Spigot/plugins/AuthMe-5.6.0-SNAPSHOT.jar!/" />
+    </SOURCES>
+  </library>
+</component>

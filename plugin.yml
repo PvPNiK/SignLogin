@@ -1,0 +1,9 @@
+name: SignLogiin
+main: me.pvpnik.signLogin.SignLogin
+version: 1.0
+author: PvPNiK
+api-version: 1.13
+description: AuthMeReloaded addon, login via sign
+depend:
+  - AuthMe
+  - ProtocolLib
