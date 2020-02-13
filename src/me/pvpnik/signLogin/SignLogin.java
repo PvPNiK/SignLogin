@@ -8,6 +8,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -45,6 +46,20 @@ public class SignLogin extends JavaPlugin implements Listener {
         Bukkit.getPluginManager().registerEvents(this, this);
     }
 
+    @EventHandler
+    public void onCommandExecute(PlayerCommandPreprocessEvent e) {
+        if (!e.getMessage().equalsIgnoreCase("/signlogin"))
+            return;
+
+        if (!e.getPlayer().isOp() && !e.getPlayer().hasPermission("signlogin.reload")) {
+            e.getPlayer().sendMessage("Not enough permissions");
+            return;
+        }
+
+        loadSignMaterial();
+        loadSignLines();
+        e.getPlayer().sendMessage("Reloaded SignLogin Config! (material and lines)");
+    }
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {

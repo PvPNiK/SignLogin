@@ -101,10 +101,6 @@ public class SignMenuFactory {
             return this;
         }
 
-        public Menu setSignMaterial(XMaterial signXMaterial) {
-            return setSignMaterial(signXMaterial.parseMaterial());
-        }
-
         public Menu setSignMaterial(Material signMaterial) {
             if (signMaterial.toString().contains("SIGN"))
                 this.signMaterial = signMaterial;
