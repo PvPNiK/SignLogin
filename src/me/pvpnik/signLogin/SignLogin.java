@@ -10,6 +10,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class SignLogin extends JavaPlugin implements Listener {
@@ -92,6 +93,7 @@ public class SignLogin extends JavaPlugin implements Listener {
     }
 
     public void loadSignLines() {
+        reloadConfig();
         for (int i = 1; i <= 4; i++) {
             if (getConfig().contains("sign.line" + i)) {
                 signLines[i-1] = ChatColor.translateAlternateColorCodes('&', getConfig().getString("sign.line" + i));
@@ -100,6 +102,7 @@ public class SignLogin extends JavaPlugin implements Listener {
     }
 
     public void loadSignMaterial() {
+        reloadConfig();
         if (getConfig().contains("sign.material")) {
             try {
                 signMaterial = Material.getMaterial(getConfig().getString("sign.material"));
